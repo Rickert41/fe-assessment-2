@@ -19,6 +19,7 @@ function checkForm() {
     }
 }
 
+// functie word aangeroepen bij elke input in textarea
 function calculateLength() {
     const maxLength = textArea.getAttribute("maxlength"); // max length van de textarea
     let current = textArea.value.length; // local scope
