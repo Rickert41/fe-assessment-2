@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact formulier</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+
+<body>
+    <img src="img/background.jpg" alt="backgrounnd image" class="background">
+    <section id="container">
+        <h1>Contact</h1>
+        <h2>Heeft u vragen, opmerkingen of iets anders? Vul dan nu dit formulier in.</h2>
+        <form action="" method="get" class="form-example">
+            <div>
+                <label for="name">Voornaam: </label>
+                <input type="text" name="name" id="name" required>
+            </div>
+            <div>
+                <label for="lastname">Achternaam: </label>
+                <input type="text" name="lastname" id="lastname" required>
+            </div>
+            <div>
+                <label for="gender">Geslacht:</label>
+                <section class="gender">
+                    <input type="radio" id="male" name="gender" value="male">
+                    <label for="male">Man</label><br>
+                    <input type="radio" id="female" name="gender" value="female">
+                    <label for="female">Vrouw</label><br>
+                    <input type="radio" id="other" name="gender" value="other">
+                    <label for="other">Anders</label>
+                </section>
+            </div>
+            <div>
+                <label for="text">Wat wilt u weten:</label>
+                <textarea id="text" name="text" required></textarea>
+            </div>
+            <div>
+                <label for="email">Je email adres: </label>
+                <input type="email" name="email" id="email" required>
+            </div>
+            <div>
+                <input type="file" id="image" name="image" accept="image/png, image/jpeg">
+                <label for="image">Afbeelding (optioneel)</label>
+            </div>
+            <div>
+                <input type="submit" [disabled]="!ngForm.valid" value="Verzend">
+            </div>
+        </form>
+    </section>
+</body>
+
+</html>
