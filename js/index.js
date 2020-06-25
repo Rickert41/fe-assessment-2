@@ -25,5 +25,10 @@ function calculateLength() {
     let current = textArea.value.length; // local scope
     let letterNumber = document.querySelector(".textleft");
     let charactersLeft = maxLength - current; // berekening hoeveel characters er over zijn
-    letterNumber.innerHTML = charactersLeft; // veranderd het getal in de html
+    console.log(charactersLeft);
+    if (charactersLeft == 99) {
+        letterNumber.innerHTML = "max 99 tekens"; // wanneer er niks in het veld staat
+    } else {
+        letterNumber.innerHTML = charactersLeft; // wanner er wel iets staat veranderd het getal in de html
+    }
 }

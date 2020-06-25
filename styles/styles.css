@@ -56,6 +56,7 @@ textarea {
 	border: none;
     border-radius: 3px;
     box-sizing: border-box;
+    padding: 10px;
 }
 
 input:focus,
@@ -123,7 +124,8 @@ input[type=submit]:active {
     color: grey;
     position: absolute;
     right: 0;
-    top: -17px;
+    top: -12px;
+    font-size: 0.8rem;
 }
 
 
