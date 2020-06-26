@@ -23,7 +23,7 @@ function checkForm() {
 // Functie word aangeroepen bij elke input in textarea
 function calculateLength() {
     const maxLength = textArea.getAttribute("maxlength"); // max length van de textarea
-    let current = textArea.value.length; // local scope
+    let current = textArea.value.length; // local scope, deze variabelen bestaan alleen in calculateLength()
     let letterNumber = document.querySelector(".textleft");
     let charactersLeft = maxLength - current; // berekening hoeveel characters er over zijn
     if (charactersLeft == 99) {
