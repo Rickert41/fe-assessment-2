@@ -1,4 +1,5 @@
-html, body {
+html,
+body {
     padding: 0;
     margin: 0;
     font-family: 'Roboto', sans-serif;
@@ -8,8 +9,10 @@ img.background {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100vw;
-    height: 100vw;
+    width: 100%;
+    height: 100%;
+    min-height: 100vw;
+    min-width: 100vw;
     object-fit: cover;
     filter: brightness(50%);
     z-index: -1;
@@ -49,11 +52,11 @@ form div {
 
 input,
 textarea {
-    transition: width 0.4s ease-in-out, height 1s ease-in-out;
+    transition: width 0.4s ease-in-out;
     width: 200px;
     height: auto;
     background-color: white;
-	border: none;
+    border: none;
     border-radius: 3px;
     box-sizing: border-box;
     padding: 10px;
@@ -105,9 +108,9 @@ form div input[type=submit] {
     font-weight: 300;
     font-size: 0.8rem;
 }
-  
-input[type=radio]:checked + label,
-input[type=radio]:hover + label{
+
+input[type=radio]:checked+label,
+input[type=radio]:hover+label {
     border-bottom: 2px solid white;
 }
 
@@ -117,7 +120,7 @@ input[type=submit] {
 }
 
 input[type=submit]:active {
-    box-shadow: inset 4px 4px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: inset 4px 4px 5px 0px rgba(0, 0, 0, 0.75);
 }
 
 .textleft {
@@ -131,15 +134,15 @@ input[type=submit]:active {
 
 /* Bron: https://tympanus.net/codrops/2015/09/15/styling-customizing-file-inputs-smart-way/ */
 input[type=file] {
-	width: 0.1px;
-	height: 0.1px;
-	opacity: 0;
-	overflow: hidden;
-	position: absolute;
-	z-index: -1;
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
 }
 
-input[type=file] + label {
+input[type=file]+label {
     font-size: 0.8rem;
     color: black;
     background-color: white;
@@ -151,11 +154,38 @@ input[type=file] + label {
     transition-duration: 0.4s;
 }
 
-input[type=file]:focus + label,
-input[type=file] + label:hover {
+input[type=file]:focus+label,
+input[type=file]+label:hover {
     background-color: rgb(213, 235, 255);
 }
 
 .upload {
     background-color: rgb(92, 92, 92) !important;
+}
+
+/* kleine mediaquery voor en beetje responsiveness op mobiel */
+ @media screen and (max-width: 500px) { 
+    form div {
+        flex-direction: column;
+        transition: height 0.4s ease-in-out;
+    }
+
+    input,
+    textarea {
+        width: 100%;
+    }
+
+    input:focus,
+    textarea:focus {
+        width: 100%;
+        height: 40px;
+    }
+
+    textarea:focus {
+        height: 100px;
+    }
+
+    input[type=radio]:focus {
+        height: auto;
+    }
 }
